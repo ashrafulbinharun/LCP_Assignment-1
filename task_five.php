@@ -1,5 +1,6 @@
 <?php
 
+// Given an integer n, find the sum of the digits of the integer.
 function sum( $n ) {
     if ( !is_numeric( $n ) || $n === '' ) {
         echo "Please provide a valid numeric value.";
@@ -14,8 +15,8 @@ function sum( $n ) {
     return $sum;
 }
 
-$sampleOne = sum( 6243 );
-$sampleTwo = sum( 200 );
+$sampleOne = sum( 62343 );
+$sampleTwo = sum( 1000 );
 
 echo "Sample Output 1: {$sampleOne}";
 echo PHP_EOL;

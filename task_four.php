@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Print the following pattern based on the given number n (can be any number).
+ */
+
 function pyramid( $n ) {
     if ( $n <= 0 ) {
         echo "Please provide a positive integer greater than zero.";
