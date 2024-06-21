@@ -1,39 +1,29 @@
 <?php
 
 /**
- * Given a sentence, keep the order of the words same, but reverse the characters of each word.
- * Here the order of the words is the same as the given sentence, but the order of the characters in the words is reversed.
+ * Task: Given a sentence, keep the order of the words the same, but reverse the characters of each word.
+ * Example: If the given sentence is: ‘I love programming’, the result should be: ‘I evol gnimmargorp’
  */
 
 function reverseWords( $sentence ) {
+    // Check if the sentence is empty
     if ( $sentence === '' ) {
         return "Empty string.";
     }
 
+    // Split the sentence into words
     $words = explode( ' ', $sentence );
 
-    foreach ( $words as &$word ) {
-        $length = strlen( $word );
-        $reversed = '';
+    // Use array_map with strrev to reverse each word
+    $reversedWords = array_map( 'strrev', $words );
 
-        for ( $i = $length - 1; $i >= 0; $i-- ) {
-            $reversed .= $word[$i];
-        }
-
-        $word = $reversed;
-    }
-
-    $reversedSentence = implode( ' ', $words );
-
-    return $reversedSentence;
+    // Join the reversed words back into a sentence
+    return implode( ' ', $reversedWords );
 }
 
+// Prompt the user to enter a sentence
 echo "Please enter a sentence: ";
 $sentence = trim( fgets( STDIN ) );
 
+// Output the sentence with each word's characters reversed
 echo reverseWords( $sentence );
-
-/**
- * For example, if the given sentence is: ‘I love programming’
- * The result should be: ‘I evol gnimmargorp’
- */

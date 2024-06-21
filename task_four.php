@@ -11,16 +11,14 @@ function pyramid( $n ) {
     }
 
     for ( $i = 1; $i <= $n; $i++ ) {
-        // space
-        for ( $j = 0; $j < ( $n - $i ); $j++ ) {
-            echo ' ';
-        }
+        // Calculate the number of leading spaces
+        $spaces = str_repeat( ' ', $n - $i );
 
-        // stars
-        for ( $j = 0; $j < ( $i * 2 ) - 1; $j++ ) {
-            echo '*';
-        }
-        echo PHP_EOL;
+        // Calculate the number of stars
+        $stars = str_repeat( '*', ( $i * 2 ) - 1 );
+
+        // Print the current level of the pyramid
+        echo $spaces . $stars . PHP_EOL;
     }
 }
 
